@@ -76,7 +76,7 @@ view: events {
     sql: ${TABLE}.os ;;
   }
 
-  dimension: sequence_number {
+  dimension: Sequence_Number {
     type: number
     sql: ${TABLE}.sequence_number ;;
   }
@@ -85,25 +85,20 @@ view: events {
   # measures for this dimension, but you can also add measures of many different aggregates.
   # Click on the type parameter to see all the options in the Quick Help panel on the right.
 
-  measure: total_sequence_number {
-    type: sum
-    sql: ${sequence_number} ;;
-  }
-
-  measure: average_sequence_number {
-    type: average
-    sql: ${sequence_number} ;;
-  }
-
   dimension: session_id {
     type: string
     sql: ${TABLE}.session_id ;;
   }
 
-  dimension: state {
+  dimension: helper_dimension {
     type: string
-    sql: ${TABLE}.state ;;
+    sql: ${user_id} || ${TABLE}.zip ;;
   }
+
+  # dimension: state {
+  #   type: string
+  #   sql: ${TABLE}.state ;;
+  # }
 
   dimension: traffic_source {
     type: string
@@ -124,6 +119,12 @@ view: events {
   dimension: zip {
     type: zipcode
     sql: ${TABLE}.zip ;;
+  }
+
+  measure: total_count {
+    type: count
+    sql: ${TABLE}.session_id ;;
+    filters: [users.total_age: "> 25"]
   }
 
   measure: count {

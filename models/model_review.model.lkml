@@ -2,17 +2,16 @@
 connection: "ecommerce"
 label: "Model Review Ecommerce"
 # include all the views
-include: "/views/**/*.view"
+include: "/explores/*.explore"
 
 # Datagroups define a caching policy for an Explore. To learn more,
 # use the Quick Help panel on the right to see documentation.
 
 datagroup: model_review_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
-  max_cache_age: "1 hour"
+  max_cache_age: "4 hour"
 }
 
-persist_with: model_review_default_datagroup
 
 # Explores allow you to join together different views (database tables) based on the
 # relationships between fields. By joining a view into an Explore, you make those
@@ -24,5 +23,3 @@ persist_with: model_review_default_datagroup
 # To create more sophisticated Explores that involve multiple views, you can use the join parameter.
 # Typically, join parameters require that you define the join type, join relationship, and a sql_on clause.
 # Each joined view also needs to define a primary key.
-
-explore: fruit_basket {}
