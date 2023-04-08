@@ -14,7 +14,7 @@ explore: products {
 
 explore: order_items {}
 
-# explore: ndt_order_items {}
+explore: ndt_order_items {}
 
 explore: aggregation {}
 explore: distribution_centers {}
