@@ -109,6 +109,11 @@ view: order_items {
     drill_fields: [detail*]
   }
 
+  measure: price_per_item {
+    type: number
+    sql: ${total_sale_price}/${count} ;;
+  }
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [

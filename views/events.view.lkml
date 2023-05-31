@@ -106,7 +106,7 @@ view: events {
     type: zipcode
     sql: ${TABLE}.zip ;;
   }
-
+ #test
   measure: total_count {
     type: count
     sql: ${TABLE}.session_id ;;
