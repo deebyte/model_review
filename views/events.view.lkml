@@ -81,10 +81,10 @@ view: events {
     sql: ${user_id} || ${TABLE}.zip ;;
   }
 
-  # dimension: state {
-  #   type: string
-  #   sql: ${TABLE}.state ;;
-  # }
+  dimension: state {
+    type: string
+    sql: ${TABLE}.state ;;
+  }
 
   dimension: traffic_source {
     type: string
@@ -108,9 +108,9 @@ view: events {
   }
  #test
   measure: total_count {
-    type: count
+    type: count_distinct
     sql: ${TABLE}.session_id ;;
-    filters: [users.total_age: "> 25"]
+    filters: [users.age: "> 25"]
   }
 
   measure: count {

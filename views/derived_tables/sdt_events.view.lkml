@@ -9,7 +9,7 @@ view: sdt_events {
       FROM `looker-onboarding.ecommerce.events`
            AS events
       GROUP BY
-          1,
+          1,2
 
        ;;
   }

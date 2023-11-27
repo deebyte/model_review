@@ -69,6 +69,13 @@ view: order_items {
     sql: ${TABLE}.sale_price ;;
   }
 
+  dimension_group: shipping_duration{
+    type: duration
+    sql_start: ${shipped_date} ;;
+    intervals: [hour, day, week, month]
+    sql_end: ${delivered_date};;
+  }
+
   measure: total_sale_price {
     type: sum
     sql: ${sale_price} ;;
