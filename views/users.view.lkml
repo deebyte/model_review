@@ -7,6 +7,7 @@ view: users {
 
   dimension: id {
     primary_key: yes
+    hidden: yes
     type: number
     sql: ${TABLE}.id ;;
   }
@@ -150,6 +151,7 @@ view: fruit_basket {
   }
 
   measure: count {
+    label: "Number of Users"
     type: count
     drill_fields: []
   }

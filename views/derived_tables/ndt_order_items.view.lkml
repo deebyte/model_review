@@ -3,6 +3,7 @@
 view: ndt_order_items {
   derived_table: {
     persist_for: "4 hours"
+    sql_trigger_value: SELECT CURRENT_DATE() ;;
     explore_source: order_items {
       column: user_id {}
       column: created_date {}
@@ -21,6 +22,7 @@ view: ndt_order_items {
     type: date
   }
   dimension: order_id {
+    primary_key: yes
     description: ""
     type: number
   }

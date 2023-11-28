@@ -20,6 +20,7 @@ view: sdt_events {
   }
 
   dimension: events_id {
+    primary_key: yes
     type: number
     sql: ${TABLE}.events_id ;;
   }

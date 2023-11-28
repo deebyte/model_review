@@ -7,6 +7,7 @@ view: ndt_test {
     }
   }
   dimension: id {
+    primary_key: yes
     description: ""
     type: number
   }
