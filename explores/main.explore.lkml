@@ -10,6 +10,9 @@ include: "/views/aggregation.view.lkml"
 include: "/views/distribution_centers.view.lkml"
 include: "/views/etl_jobs.view.lkml"
 
+
+persist_with : model_review_datagroup
+
 explore: events {
   join: users {
     sql_on: ${events.user_id} = ${users.id} ;;

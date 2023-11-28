@@ -17,11 +17,15 @@ view: events {
   }
 
   dimension: city {
+    group_label: "Location Details"
+    group_item_label: "City"
     type: string
     sql: ${TABLE}.city ;;
   }
 
   dimension: country {
+    group_label: "Location Details"
+    group_item_label: "Country"
     type: string
     map_layer_name: countries
     sql: ${TABLE}.country ;;
@@ -52,11 +56,15 @@ view: events {
   }
 
   dimension: latitude {
+    group_label: "Location Details"
+    group_item_label: "Latitude"
     type: number
     sql: ${TABLE}.latitude ;;
   }
 
   dimension: longitude {
+    group_label: "Location Details"
+    group_item_label: "Longitude"
     type: number
     sql: ${TABLE}.longitude ;;
   }
@@ -82,6 +90,8 @@ view: events {
   }
 
   dimension: state {
+    group_label: "Location Details"
+    group_item_label: "State"
     type: string
     sql: ${TABLE}.state ;;
   }
